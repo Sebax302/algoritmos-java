@@ -1,0 +1,44 @@
+// Cálculo de energía eléctrica
+import java.util.Locale;
+import java.util.Scanner;
+
+public class ConsumoElectrico {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        double POT = 0.0;
+        double HRS = 0.0;
+        double TAR = 0.0;
+        double CON = 0.0;
+        double COS = 0.0;
+
+        // Ejercicio: Cálculo de energía eléctrica
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese la potencia del electrodomestico en W:"));
+        POT = sc.nextDouble();
+        // Proceso y cálculos
+        while (POT <= 0) {
+            System.out.println(String.valueOf("La potencia debe ser mayor que 0"));
+            System.out.println(String.valueOf("Ingrese la potencia del electrodomestico en W:"));
+            POT = sc.nextDouble();
+        }
+        System.out.println(String.valueOf("Ingrese las horas de uso diario (0 a 24):"));
+        HRS = sc.nextDouble();
+        while (HRS < 0  ||  HRS > 24) {
+            System.out.println(String.valueOf("Las horas deben estar entre 0 y 24"));
+            System.out.println(String.valueOf("Ingrese las horas de uso diario (0 a 24):"));
+            HRS = sc.nextDouble();
+        }
+        System.out.println(String.valueOf("Ingrese la tarifa por kWh:"));
+        TAR = sc.nextDouble();
+        while (TAR < 0) {
+            System.out.println(String.valueOf("La tarifa no puede ser negativa"));
+            System.out.println(String.valueOf("Ingrese la tarifa por kWh:"));
+            TAR = sc.nextDouble();
+        }
+        CON = (POT / 1000) * HRS * 30;
+        COS = CON * TAR;
+        System.out.println(String.valueOf("Consumo mensual: ") + String.valueOf(CON) + String.valueOf(" kWh"));
+        System.out.println(String.valueOf("Costo mensual: $") + String.valueOf(COS));
+    }
+}

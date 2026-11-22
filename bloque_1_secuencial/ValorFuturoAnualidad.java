@@ -1,0 +1,37 @@
+// Valor futuro de una anualidad
+import java.util.Locale;
+import java.util.Scanner;
+
+public class ValorFuturoAnualidad {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        double D = 0.0;
+        double I = 0.0;
+        double VF = 0.0;
+        double TT = 0.0;
+        int N = 0;
+
+        // Ejercicio: Valor futuro de una anualidad
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el deposito mensual:"));
+        D = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese la tasa mensual en decimal:"));
+        I = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese el numero de meses:"));
+        N = sc.nextInt();
+        // Proceso y cálculos
+        TT = D * N;
+        if (N <= 0  ||  D < 0  ||  I < 0) {
+            System.out.println(String.valueOf("Datos no validos"));
+        } else {
+            if (I == 0) {
+                VF = TT;
+            } else {
+                VF = D * ((Math.pow((1 + I), N) - 1) / I);
+            }
+            System.out.println(String.valueOf("Total depositado: $") + String.valueOf(TT));
+            System.out.println(String.valueOf("Valor futuro: $") + String.valueOf(VF));
+        }
+    }
+}
