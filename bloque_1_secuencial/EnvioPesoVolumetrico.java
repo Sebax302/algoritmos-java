@@ -1,0 +1,43 @@
+// Costo de envío con peso volumétrico
+import java.util.Locale;
+import java.util.Scanner;
+
+public class EnvioPesoVolumetrico {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        double PR = 0.0;
+        double L = 0.0;
+        double A = 0.0;
+        double H = 0.0;
+        double PV = 0.0;
+        double PC = 0.0;
+        double CT = 0.0;
+
+        // Ejercicio: Costo de envío con peso volumétrico
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el peso real en kg:"));
+        PR = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese largo en cm:"));
+        L = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese ancho en cm:"));
+        A = sc.nextDouble();
+        System.out.println(String.valueOf("Ingrese alto en cm:"));
+        H = sc.nextDouble();
+        // Proceso y cálculos
+        if (PR < 0  ||  L < 0  ||  A < 0  ||  H < 0) {
+            System.out.println(String.valueOf("Datos no validos"));
+        } else {
+            PV = (L * A * H) / 5000;
+            if (PR >= PV) {
+                PC = PR;
+            } else {
+                PC = PV;
+            }
+            CT = PC * 2.50;
+            System.out.println(String.valueOf("Peso volumetrico: ") + String.valueOf(PV) + String.valueOf(" kg"));
+            System.out.println(String.valueOf("Peso a cobrar: ") + String.valueOf(PC) + String.valueOf(" kg"));
+            System.out.println(String.valueOf("Costo total: $") + String.valueOf(CT));
+        }
+    }
+}

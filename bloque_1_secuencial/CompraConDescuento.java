@@ -1,0 +1,36 @@
+// Compra con descuento
+import java.util.Locale;
+import java.util.Scanner;
+
+public class CompraConDescuento {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        double P = 0.0;
+        double IVA = 0.0;
+        double PIVA = 0.0;
+        double PD = 0.0;
+        double PCD = 0.0;
+        double PF = 0.0;
+
+        // Ejercicio: Compra con descuento
+        // Variables y datos del problema
+        // Proceso y cálculos
+        IVA = 0.15;
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingresar el valor del producto"));
+        P = sc.nextDouble();
+        while (P <= 0) {
+            System.out.println(String.valueOf("El valor de producto no puede ser menor ni igual a 0"));
+            System.out.println(String.valueOf("Ingresar el valor del producto"));
+            P = sc.nextDouble();
+        }
+        PD = P*0.20;
+        PCD = P-PD;
+        PIVA = PCD*IVA;
+        PF = PCD+PIVA;
+        System.out.println(String.valueOf("Descuento aplicado") + String.valueOf(PD));
+        System.out.println(String.valueOf("Precio con el descuento") + String.valueOf(PCD));
+        System.out.println(String.valueOf("IVA aplicado") + String.valueOf(PIVA));
+        System.out.println(String.valueOf("Precio final") + String.valueOf(PF));
+    }
+}

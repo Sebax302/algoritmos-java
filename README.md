@@ -1,18 +1,21 @@
-## Getting Started
+# Algoritmos en Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+73 ejercicios de introducción a la programación, agrupados en 6 bloques (secuencial, condicional, repetitivo, condicional anidado, selección múltiple y evaluación). Lista completa en [`INDICE.md`](INDICE.md).
 
-## Folder Structure
+## Cómo ejecutar
 
-The workspace contains two folders by default, where:
+Requiere JDK 17 o superior, sin librerías externas.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+```bash
+cd bloque_3_iterativo
+javac -encoding UTF-8 NumerosPerfectos.java
+java NumerosPerfectos
+```
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Los decimales se escriben con punto (`3.5`).
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+## Verificación
 
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+```bash
+bash verificar.sh
+```

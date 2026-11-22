@@ -1,0 +1,44 @@
+// Aprobados o reprobados
+import java.util.Locale;
+import java.util.Scanner;
+
+public class AprobadosReprobados {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in).useLocale(Locale.US);
+        int N = 0;
+        int X = 0;
+        int A = 0;
+        int R = 0;
+        double NOTA = 0.0;
+
+        // Ejercicio: Aprobados o reprobados
+        // Variables y datos del problema
+        // Entrada de datos y validaciones
+        System.out.println(String.valueOf("Ingrese el numero de alumnos:"));
+        N = sc.nextInt();
+        // Proceso y cálculos
+        A = 0;
+        R = 0;
+        while (N <=0) {
+            System.out.println(String.valueOf("La cantidad ingresada no puede ser menor ni igual a 0"));
+            System.out.println(String.valueOf("Ingrese el numero de alumnos:"));
+            N = sc.nextInt();
+        }
+        for (X = 1; X <= N; X++) {
+            System.out.println(String.valueOf("Ingrese la calificacion del alumno: ") + String.valueOf(X));
+            NOTA = sc.nextDouble();
+            while (NOTA <0  ||  NOTA >10) {
+                System.out.println(String.valueOf("La nota no puede ser negativa ni mayor a 10"));
+                System.out.println(String.valueOf("Ingrese la calificacion del alumno: ") + String.valueOf(X));
+                NOTA = sc.nextDouble();
+            }
+            if (NOTA >= 7) {
+                A = A + 1;
+            } else {
+                R = R + 1;
+            }
+        }
+        System.out.println(String.valueOf("Cantidad de aprobados: ") + String.valueOf(A));
+        System.out.println(String.valueOf("Cantidad de reprobados: ") + String.valueOf(R));
+    }
+}
